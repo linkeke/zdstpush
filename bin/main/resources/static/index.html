@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Spring Boot+WebSocket+广播式</title>
+
+</head>
+<body >
+        <p id="response"></p>
+<script src="js/sockjs.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/zdstPush.js"></script>
+<script type="text/javascript">
+ var zdstPush = new zdstPush("user2","qt");
+ zdstPush.onmessage(function(evnt){
+	 $("#response").html(evnt.data);
+ });
+</script>
+</body>
+</html>

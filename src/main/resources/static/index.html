@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Spring Boot+WebSocket+广播式</title>
+
+</head>
+<body >
+        <p id="response"><input type="button" value="send" onclick="send()"></p>
+<script src="js/sockjs.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/zdstPush.js"></script>
+
+<script type="text/javascript">
+ var zdstPush = new zdstPush("localhost","8124");
+ zdstPush.connection("79ijlkj","556");
+ zdstPush.onmessage(function(evnt){
+	 /* $("#response").html(evnt.data); */
+	 alert(evnt.data);
+	 var x=JSON.parse(evnt.data);
+ });
+ function send(){
+	 alert(22);
+ }
+</script>
+</body>
+</html>
